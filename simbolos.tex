@@ -1,0 +1,36 @@
+% see https://www.overleaf.com/learn/latex/Nomenclatures
+
+\renewcommand{\nomname}{Lista de Símbolos}
+%% This will add the units
+%----------------------------------------------
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+%----------------------------------------------
+\renewcommand\nomgroup[1]{%
+   \item[\bfseries
+   \ifstrequal{#1}{C}{Constantes}{%
+   \ifstrequal{#1}{V}{Variáveis}{}}%
+]}
+
+%\nomenclature[C]{\(c\)}{Velocidade da luz no vácuo}
+%\nomenclature[C]{\(h\)}{Constante de Planck}
+%\nomenclature[C]{\(G\)}{Constante Gravitacional}
+% Se quiser obter o valor externamente:
+\nomenclature[C]{\(c\)}{\href{https://physics.nist.gov/cgi-bin/cuu/Value?c}{Velocidade da luz no vácuo}
+\nomunit{\SI{299792458}{\meter\per\second}}}
+\nomenclature[C]{\(h\)}{\href{https://physics.nist.gov/cgi-bin/cuu/Value?h}{Constante de Planck}
+\nomunit{\SI[group-digits=false]{6.62607015e-34}{\joule\per\hertz}}}
+\nomenclature[C]{\(G\)}{\href{https://physics.nist.gov/cgi-bin/cuu/Value?bg} {Constante Gravitacional} 
+\nomunit{\SI[group-digits=false]{6.67430e-11}{\meter\cubed\per\kilogram\per\second\squared}}}
+%\nomenclature[C]{\(\mathbb{R}\)}{Números reais}
+%\nomenclature[C]{\(\mathbb{C}\)}{Números complexos}
+\nomenclature[V]{\(\mathbb{H}\)}{Matriz Hermitiana}
+\nomenclature[V]{\(V\)}{Volume}
+\nomenclature[V]{\(\alpha\)}{Coeficiente de absorção sonora}
+\nomenclature[V]{\(p\)}{Pressão sonora}
+%\nomenclature[S]{ABNT}{Associação Brasileira de Normas Técnicas}
+%\nomenclature[S]{UFRJ}{Universidade Federal do Rio de Janeiro}
+%\nomenclature[S]{DENATRAN}{Departamento Nacional de Trânsito}
+%\nomenclature[A]{FVM}{Faça você mesmo(a)}
+%\nomenclature[A]{IOC}{Internet das coisas}
+

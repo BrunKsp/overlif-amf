@@ -1,0 +1,164 @@
+\chapter{Revisão Bibliográfica}
+
+Este capítulo apresenta uma revisão bibliográfica sobre o estado da arte e a definição dos conceitos e dos aspectos necessários para a compreensão do trabalho.
+
+\section{Conceituação Básica sobre Algo}
+
+Nesse capítulo estará toda a fundamentação teórica no estado atual da arte para que os leitores compreendam as etapas metodológicas que serão descritas posteriormente, bem como para a apresentação dos resultados. Nele devem ser colocadas as referências bibliográficas.  
+
+\subsection{título de uma subseção}
+
+Inclua subseções conforme convier.
+
+\section{Como incluir referências bibliográficas}
+
+Esse modelo de Projeto de Graduação utiliza o pacote ABNTEX2CITE para citações, devido ao uso das normas ABNT.
+
+Para saber como fazer as citações e as possibilidades que existem, consulte os sites abaixo, principalmente o manual no primeiro link:
+\begin{itemize}
+\item \textcolor{red}{\href{http://mirrors.ctan.org/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf}{http://mirrors.ctan.org/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf}}
+    \item \href{https://www.abntex.net.br}{https://www.abntex.net.br}
+    \item \href{https://github.com/abntex/abntex2}{https://github.com/abntex/abntex2}
+\end{itemize}
+
+Para incluir uma referência bibliográfica, primeiro adione-a ao arquivo referencias.bib, de acordo o tipo, ou seja, tese, dissertação (msthesis), livro (book), manual (manual), artigo de revista (article), artigo de congressos (inproceedings). Em seguinta adicione o seu texto acrecentando a chamada para o local onde deseja incluir a referência \cite{OMS2011} ou diversas juntas: \cite{NBR12859,who2018}.
+
+
+\subsection{Exemplos}
+
+\lipsum[2] \cite{infraero}.
+
+\lipsum[2] \cite{BAYER2009}
+
+\lipsum[2] \cite{googleearth}.
+
+\lipsum[2] \cite{OMS2011}.
+
+\lipsum[2] \cite{NBR12859}.
+
+\subsection{Como incluir Figuras}
+
+Para incluir figuras, primeiro faça o upload do arquivo no formato desejado (JPG, EPS, PNG etc) na pasta de figuras ou em qualquer pasta que desejar. Em seguida, use o texto abaixo como exemplo para incluir figuras, substituindo o nome do arquivo e o identificador dessa figura no texto através do ''label´´. Esse deve ser um identificador único o longo de todo o texto. Sugere-se que o label das figuras comece com ``fig:", dessa forma fica mais fácil selecionar figuras, tabelas e equações dentre a lista de opções que aparecem para inserir os identificadores ao longo do texto.
+Para fazer referência a uma figura no texto basta utilizar o comando ``ref", como mostrado na Figura \ref{fig:conceitos-da-onda}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm]{Figuras/capitulo2/onda_sonora.jpg}
+	\caption{Amplitude da onda sonora.}
+	Fonte: Adaptado de ... .
+    \label{fig:conceitos-da-onda}
+\end{figure}
+
+\subsection{Subfiguras}
+
+Para inserir diversas imagens dentro de uma unica figura use o exemplo abaixo. 
+Para fazer referencia à figura com todas as imagens use: Fig.~\ref{fig:exemplos-de-subfiguras}. Para fazer referência às subfiguras use os respectivos labels Fig.~\ref{fig:exemplo-subfig1} e Fig.~\ref{fig:exemplo-subfig2}.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{\textwidth}
+       \centering
+       \includegraphics[width=.5\textwidth]{Figuras/capitulo2/onda_sonora.jpg}
+       \caption{Primeira imagem.}
+       \label{fig:exemplo-subfig1}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+       \centering
+       \includegraphics[width=.7\textwidth]{Figuras/capitulo2/graficosel.jpg}
+       \caption{Segunda imagem.}
+       \label{fig:exemplo-subfig2}
+    \end{subfigure}
+  \caption{Legenda da figura completa (com as diversas imagens).}
+  \label{fig:exemplos-de-subfiguras}
+\end{figure}
+
+Veja mais sobre subfiguras no link: \url{https://latex-tutorial.com/subfigure-latex/}
+
+\subsection{Como incluir Equações}
+
+\begin{equation}
+    \texttt{NPS} = 10 \log_{10} \left (\frac{p^2(t)}{p_0^2} \right ),
+\end{equation}
+onde ${p(t)}$ corresponde a uma variação de pressão sonora em relação a um valor constante ($p_0$), que representa o limiar inferior da audição, definido como $20\mu Pa$. 
+
+O nível correspondente ao período de 15 horas do dia, entre 7h e 22h, é conhecido como \textit{Nível Equivalente Dia ($L_D$)} e pode ser obtido pela Equação \ref{L_D}:
+    \begin{equation}
+    L_D =  10 \log_{10}\left( \frac{1}{N} \sum_{n=1}^{N} 10^{\frac{L_{Aeq,t}[n]}{10}} \right) \mbox{dB},
+    \label{L_D}
+    \end{equation}	
+considerando amostras do nível $N$ obtidas durante o período $ T $ de tempo. Da mesma forma, o período noturno $L_N$, é calculado pela Equação \ref{L_D}, exceto por conter as amostras de nível tomadas das 22h às 7h do dia seguinte.    
+
+ Nível Médio de Ruído Dia-Noite (\textit{Day-Night Average Noise Level}), \dnl ou L$_ {DN} $), é dado pela média ponderada da energia sonora durante 24 horas. O \dnl é definido pela Equação \ref{Ldn} ~\cite{SILVA2016}, considerando o tempo total de 24 horas e aplicando uma penalidade de 10 dB ao ruído medido durante o período noturno:
+
+\begin{equation}
+	\dnl = 10 \log_{10} \left\{ \frac{1}{24} \left[ 15 \cdot 10^{\frac{L_D}{10}} + 9 \cdot 10^{\frac{(L_N + 10)}{10}} \right] \right\}.
+	\label{Ldn}
+\end{equation}
+
+\section{As Tabelas}
+
+\begin{table}[H]
+\centering
+\caption{Limites de níveis de pressão sonora de acordo com a área habitada e período}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Tipos de Áreas Habitadas}} & \multicolumn{2}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}$RL_{Aeq}$\\ Limites dos níveis de\\ pressão sonora (dB)\end{tabular}}} \\ \cline{2-3} 
+ & \begin{tabular}[c]{@{}c@{}}Período Diurno\end{tabular} & \begin{tabular}[c]{@{}c@{}}Período Noturno\end{tabular} \\ \hline
+Residencial rural & 40 & 35 \\ \hline
+Estritamente residencial urbana ou de hospitais ou de escolas & 50 & 45 \\ \hline
+Mista predominantemente residencial & 55 & 50 \\ \hline
+Mista com predominância de atividades comerciais e/ou administrativa & 60 & 55 \\ \hline
+Mista com predominância de atividades culturais, lazer e turismo & 65 & 55 \\ \hline
+Predominantemente industrial & 70 & 60 \\ \hline
+\end{tabular}%
+}
+(Modificado de \cite{WYLE2011}).
+\label{limitesNBR10151}
+\end{table}
+
+
+Um exemplo é mostrado na tabela \ref{tab:tabela_hap}, onde são apresentados os resultados.
+\begin{table}[H] 
+\centering
+\caption{\%HAP segundo diversos Autores e agências ambientais}
+\label{tab:tabela_hap}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{
+*8{|>{\centering\arraybackslash}m{1.7 cm}}
+|}
+\hline
+{DNL (dB)} & {Schultz} & {Fidell, Schultz e Barber} & {Miedema e Vos} & {EPA} & {NRC} & {NRC aproximado} & {OECD} \\ \hline
+50 & 1,16 & 5,69 & 5,28 & 7,2 & 2,26 & 2,26 & 0 \\ \hline
+55 & 3,82 & 8,27 & 11,04 & 16,2 & 4,57 & 4,52 & 10 \\ \hline
+60 & 8,36 & 12,65 & 18,56 & 25,2 & 8,67 & 8,58 & 20 \\ \hline
+65 & 15,11 & 18,82 & 27,76 & 34,2 & 15,17 & 15,45 & 30 \\ \hline
+70 & 21,45 & 26,8 & 38,51 & 43,2 & 24,49 & 24,72 & 40 \\ \hline
+75 & 36,72 & 36,58 & 50,71 & 52,2 & 36,86 & 37,08 & 50 \\ \hline
+80 & 52,26 & 48,16 & 64,27 & 61,2 & - & 51,92 & 60 \\ \hline
+85 & 71,45 & 61,54 & 79,07 & 70,2 & - & 67,49 & 70 \\ \hline
+90 & 94,62 & 76,71 & 95,01 & 79,2 & - & 80,99 & 80 \\ \hline
+95 & 122,13 & 93,69 & 111,99 & 88,2 & - & 89,09 & 90 \\ \hline
+\end{tabular}%
+}
+Fonte: Adaptado de ... .
+\end{table}
+
+\section{Itens}
+
+Lista sem deslocamento
+
+\begin{itemize}
+        \item {\bf Impactos Econômicos diretos}: através da geração de empregos, atração de investimento de capital e recolhimento de impostos;
+        \item {\bf Impactos econômicos indiretos}: estímulo e desenvolvimento do setor de turismo, investimento em infraestrutura, atratividade na instalação de filiais de grandes empresas e melhoria na estrutura urbana;
+        \item {\bf Impactos ambientais}: tratamento de resíduos, ruído aeroportuário e de transportes terrestres, eficiência energética, controle de poluição e controle de espécies de aves e da vegetação.
+\end{itemize}
+
+e sem deslocamento
+\begin{quote}
+   \begin{itemize}
+        \item {\bf Impactos Econômicos diretos}: através da geração de empregos, atração de investimento de capital e recolhimento de impostos;
+        \item {\bf Impactos econômicos indiretos}: estímulo e desenvolvimento do setor de turismo, investimento em infraestrutura, atratividade na instalação de filiais de grandes empresas e melhoria na estrutura urbana;
+        \item {\bf Impactos ambientais}: tratamento de resíduos, ruído aeroportuário e de transportes terrestres, eficiência energética, controle de poluição e controle de espécies de aves e da vegetação.
+    \end{itemize}
+\end{quote}
+

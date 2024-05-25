@@ -1,0 +1,89 @@
+\chapter{Título do capítulo 3}
+
+Este capítulo, em geral, explica os procedimentos da metodologia.
+
+\section{Breve histórico}
+
+%substituir
+\lipsum[1]
+
+\section{Uso de Siglas e Abreviaturas no texto}
+Para usar as siglas e abreviações definidas no arquivo abrev.txt, podem ser usadas de 3 formas:
+Se quiser escrever ``Racícionio Baseado em Casos (RBC)'' de forma completa, ou seja, com nome completo e a sigla entre parênteses use o comando $\backslash$acrfull\{RBC\}:
+Usando o \acrfull{RBC} é possível ...
+Se desejar usar apenas a sigla escreva $\backslash$acrshort\{RBC\}:
+O \acrshort{RBC} é muito útil ...
+
+Se for usar apenas o texto, sem a sigla, utilize o comando $\backslash$acrlong\{RBC\}
+
+O \acrlong{RBC} é muito usado em ...
+
+Outro exemplo é o uso de \acrfull{IA}. 
+
+
+Somente as siglas e abreviaturas cadastradas no arquivo abrev.txt \textbf{E UTILIZADAS NO TEXTO} serão inseridas na Lista de Siglas, com os respectivos links para o local onde a sigla foi usada pela primeira vez.
+
+\section{Símbolos e Variáveis}
+
+Os símbolos e variáveis usadas ao longo do texto podem ser incluídas em uma Lista de Símbolos na parte pré-textual.
+Para isso, crie primeiro a lista de símbolos, conforme descrito no arquivo simbolos.tex. Em seguida use as definições no texto 
+
+% \begin{equation} \label{eu_eqn}
+% \begin{split}
+% Lending_{it} = {\abscoef} + {\tempo}\
+% \end{split}
+% \end{equation}
+
+\section{Quadros ...}
+
+Somente no Brasil são usados ``Quadros'' na ABNT.
+Veja como colocar um quadro: 
+O Quadro~\ref{qd:Teste} apresenta um exemplo de um quadro no formato de tabela.
+\begin{quadro}[h]
+  \caption{Exemplo de um quadro formatado como tabela (o caption dos quadros vem antes do quadro)}
+\begin{center}
+  \begin{tabular}{|c|c|} \hline
+     Informação A & Alguma coisa relativa \\ \hline
+     Informação B & Outra coisa \\ \hline
+  \end{tabular}
+\end{center}
+\label{qd:Teste}
+\end{quadro}
+
+Outro exemplo.
+
+\begin{quadro}[h]
+\caption{Legenda de um quadro qualquer}
+\label{quad:primeiro_quadro}
+\centering
+\begin{tabular}{|lllll|}
+\cline{1-5}
+A& B & C& D &E \\ \cline{1-5}
+\multirow{3}{*}{1} & 2 & 3& 4& 5 \\
+& 2 & 3& 4& 5 \\
+& 2 & 3& 4& 5 \\
+\cline{1-5}
+\end{tabular}
+\end{quadro}
+
+Mais um exemplo:
+
+\begin{quadro}[htb]
+\caption{\label{quadro_exemplo}Exemplo de quadro}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
+	Marcos & 26    & 68   & 178    \\ \hline
+	Ivone  & 22    & 57   & 162    \\ \hline
+	...    & ...   & ...  & ...    \\ \hline
+	Sueli  & 40    & 65   & 153    \\ \hline
+\end{tabular}\par 
+Fonte: o Autor.
+\end{center}
+\end{quadro}
+
+Este parágrafo apresenta como referenciar o quadro no texto, requisito
+obrigatório da ABNT. 
+Primeira opção, utilizando \texttt{autoref}: Ver o \autoref{quadro_exemplo}. 
+Segunda opção, utilizando  \texttt{ref}: Ver o Quadro \ref{quadro_exemplo}.
